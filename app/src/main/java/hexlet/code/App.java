@@ -1,10 +1,11 @@
 package hexlet.code;
 
 import picocli.CommandLine;
-import picocli.CommandLine;
 import picocli.CommandLine.*;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
 
 @Command(
         name = "gendiff",
@@ -13,12 +14,24 @@ import java.io.File;
 )
 public class App implements Runnable {
     @Parameters(index = "0", description = "path to first file")
-    private File filepath1;
+    private String filepath1;
     @Parameters(index = "1", description = "path to second file")
-    private File filepath2;
+    private String filepath2;
     @Override
     public void run() {
-        System.out.println("Hello World!");
+        try {
+            String dir = System.getProperty("user.dir");
+            if (filepath1.charAt(0) != '/') {
+                filepath1 = dir + "/" + filepath1;
+            }
+            if (filepath2.charAt(0) != '/') {
+                filepath2 = dir + "/" + filepath2;
+            }
+
+            System.out.println(Differ.generate(filepath1,filepath2));
+        } catch (Exception e) {
+            throw new RuntimeException("Возникла ошибка!");
+        }
     }
     @Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
     String format;

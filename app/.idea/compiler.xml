@@ -9,7 +9,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/info.picocli/picocli-codegen/4.7.0/465dee9139421849ba0139882c67379c341a2f20/picocli-codegen-4.7.0.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/info.picocli/picocli/4.7.0/dcdde55edcb523af7814ba47e57a8a097daa208d/picocli-4.7.0.jar" />
         </processorPath>
-        <module name="app.main" />
+        <module name="hexley.code.app.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
