@@ -19,10 +19,11 @@ jobs:
     - uses: actions/setup-java@v3
       with:
         distribution: temurin
-        java-version: 11
+        java-version: 17
         
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
     
     - name: Execute Gradle build
-      run: make build
+    - run: cd app/ 
+    - run: make build
