@@ -1,11 +1,16 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.core.type.*;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Comparator;
+
 
 public class Differ {
     private static String genDiff(Map<String, String> map1, Map<String, String> map2) {

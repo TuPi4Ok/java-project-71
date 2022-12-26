@@ -1,8 +1,9 @@
 package hexlet.code;
 
 import picocli.CommandLine;
-import picocli.CommandLine.*;
-
+import picocli.CommandLine.Parameters;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
 @Command(
         name = "gendiff",
         version = "gendiff 2.28",
