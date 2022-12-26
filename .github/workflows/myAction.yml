@@ -19,4 +19,4 @@ jobs:
     - name: make build
       run: | 
         cd app/
-        make build
+        sudo make build
