@@ -3,10 +3,6 @@ package hexlet.code;
 import picocli.CommandLine;
 import picocli.CommandLine.*;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
-
 @Command(
         name = "gendiff",
         version = "gendiff 2.28",
@@ -28,7 +24,7 @@ public class App implements Runnable {
                 filepath2 = dir + "/" + filepath2;
             }
 
-            System.out.println(Differ.generate(filepath1,filepath2));
+            System.out.println(Differ.generate(filepath1, filepath2));
         } catch (Exception e) {
             throw new RuntimeException("Возникла ошибка!");
         }
