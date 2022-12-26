@@ -16,6 +16,7 @@ jobs:
         
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
-    - run: ls -a
-    - run: cd app/
-    - run: ls -a
+    - run: | 
+        ls -a
+        cd app/
+        ls -a
