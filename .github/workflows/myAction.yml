@@ -21,6 +21,12 @@ jobs:
       run: | 
         cd app/
         make build
+    - name: Setup Node.js 
+      uses: actions/setup-node@v1
+      with:
+        node-version: '16.x'
+    - name: npm install
+      run: npm install
     - name: Test & publish code coverage
       uses: paambaati/codeclimate-action@v3.2.0
       env: 
