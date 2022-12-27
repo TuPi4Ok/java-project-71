@@ -16,7 +16,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
       with:
         arguments: build
-        build-root-directory: app/
+        build-root-directory: app
     - name: make build
       run: | 
         cd app/
@@ -25,11 +25,11 @@ jobs:
       run: | 
         cd app/
         make test
-    - name: Test & publish code coverage
+    - name: publish code coverage
       uses: paambaati/codeclimate-action@v3.2.0
       env: 
         CC_TEST_REPORTER_ID: ${{secrets.TESTCOVERAGE}}
-        JACOCO_SOURCE_PATH: "${{github.workspace}}/app/src/main/java"
+        JACOCO_SOURCE_PATH: src/main/java
       with:
         coverageCommand: app/gradlew jacocoTestReport 
         coverageLocations: ${{github.workspace}}app/build/test-results/test/TEST-TestDiffer.xml:jacoco
