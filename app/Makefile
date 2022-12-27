@@ -3,3 +3,5 @@ run-dist:
 .PHONY: build
 build:
 	./gradlew build
+test:
+	./gradlew test
