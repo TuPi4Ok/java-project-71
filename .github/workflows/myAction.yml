@@ -19,6 +19,5 @@ jobs:
         build-root-directory: app/
     - name: make build
       run: | 
-        echo %JAVA_HOME%
         cd app/
-        sudo make build
+        make build
