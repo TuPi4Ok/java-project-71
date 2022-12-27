@@ -17,10 +17,6 @@ jobs:
       with:
         arguments: build
         build-root-directory: app/
-    - name: Execute Gradle build
-      run: |
-        cd app/
-        ./gradlew build
     - name: make build
       run: | 
         echo %JAVA_HOME%
