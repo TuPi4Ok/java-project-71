@@ -21,6 +21,10 @@ jobs:
       run: | 
         cd app/
         make build
+    - name: make test
+      run: | 
+        cd app/
+        make test
     - name: Test & publish code coverage
       uses: paambaati/codeclimate-action@v3.2.0
       env: 
