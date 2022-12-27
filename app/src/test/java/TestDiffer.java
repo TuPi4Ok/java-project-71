@@ -15,8 +15,8 @@ public class TestDiffer {
                 + "  + verbose: true\n"
                 + "}";
         assertThat(Differ
-                .generate("/home/ivan/Project-for-Hexlet/java-project-71/app/src/test/resources/file1",
-                          "/home/ivan/Project-for-Hexlet/java-project-71/app/file2.json"))
+                .generate(System.getProperty("user.dir") + "/src/test/resources/file1.json",
+                        System.getProperty("user.dir") + "/src/test/resources/file2.json"))
                 .isEqualTo(expected);
     }
 }
