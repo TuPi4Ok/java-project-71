@@ -27,7 +27,5 @@ jobs:
         CC_TEST_REPORTER_ID: ${{secrets.TESTCOVERAGE}}
         JACOCO_SOURCE_PATH: "${{github.workspace}}app/src/main/java"
       with:
-        coverageCommand: |
-          cd app/
-          ./gradlew test 
+        coverageCommand: ./gradlew test 
         coverageLocations: ${{github.workspace}}app/target/site/jacoco/jacoco.xml:jacoco
