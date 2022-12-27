@@ -4,6 +4,8 @@ on: push
 
 jobs:
   build:
+    environment:
+      CC_TEST_REPORTER_ID: TESTCOVERAGE
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
