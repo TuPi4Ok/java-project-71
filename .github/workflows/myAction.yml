@@ -26,10 +26,10 @@ jobs:
         cd app/
         make test
     - name: publish code coverage
-      uses: app/paambaati/codeclimate-action@v3.2.0
+      uses: paambaati/codeclimate-action@v3.2.0
       env: 
         CC_TEST_REPORTER_ID: ${{secrets.TESTCOVERAGE}}
         JACOCO_SOURCE_PATH: src/main/java
       with:
         coverageCommand: app/gradlew jacocoTestReport 
-        coverageLocations: ${{github.workspace}}/app/build/test-results/test/TEST-TestDiffer.xml:jacoco
+        coverageLocations: ${{github.workspace}}/build/reports/jacoco/test/jacocoTestReport.xml:xml
