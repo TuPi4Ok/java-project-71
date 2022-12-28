@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Parser {
-    public static List<Map<String, String>> parsJson(String filepath1, String filepath2) throws IOException {
+    public static List<Map<String, Object>> parsJson(String filepath1, String filepath2) throws IOException {
         Path file1 = Path.of(filepath1);
         Path file2 = Path.of(filepath2);
 
@@ -20,15 +20,15 @@ public class Parser {
         String json2 = Files.readString(file2);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Map<String, String> jsonMap1 = objectMapper.readValue(json1, new TypeReference<Map<String, String>>() { });
-        Map<String, String> jsonMap2 = objectMapper.readValue(json2, new TypeReference<Map<String, String>>() { });
-        List<Map<String, String>> maps = new ArrayList<>();
+        Map<String, Object> jsonMap1 = objectMapper.readValue(json1, new TypeReference<Map<String, Object>>() { });
+        Map<String, Object> jsonMap2 = objectMapper.readValue(json2, new TypeReference<Map<String, Object>>() { });
+        List<Map<String, Object>> maps = new ArrayList<>();
         maps.add(jsonMap1);
         maps.add(jsonMap2);
         return maps;
     }
 
-    public static List<Map<String, String>> parsYaml(String filepath1, String filepath2) throws IOException {
+    public static List<Map<String, Object>> parsYaml(String filepath1, String filepath2) throws IOException {
         Path file1 = Path.of(filepath1);
         Path file2 = Path.of(filepath2);
 
@@ -36,9 +36,9 @@ public class Parser {
         String yaml2 = Files.readString(file2);
 
         ObjectMapper objectMapper = new YAMLMapper();
-        Map<String, String> jsonMap1 = objectMapper.readValue(yaml1, new TypeReference<Map<String, String>>() { });
-        Map<String, String> jsonMap2 = objectMapper.readValue(yaml2, new TypeReference<Map<String, String>>() { });
-        List<Map<String, String>> maps = new ArrayList<>();
+        Map<String, Object> jsonMap1 = objectMapper.readValue(yaml1, new TypeReference<Map<String, Object>>() { });
+        Map<String, Object> jsonMap2 = objectMapper.readValue(yaml2, new TypeReference<Map<String, Object>>() { });
+        List<Map<String, Object>> maps = new ArrayList<>();
         maps.add(jsonMap1);
         maps.add(jsonMap2);
         return maps;

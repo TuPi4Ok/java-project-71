@@ -8,9 +8,19 @@ import java.util.Comparator;
 
 
 public class Differ {
-    private static String genDiff(Map<String, String> map1, Map<String, String> map2) {
+
+    private static void fixNull(Map<String, Object> map) {
+        for (Map.Entry<String, Object> item1 : map.entrySet()) {
+            if (item1.getValue() == null) {
+                item1.setValue("null");
+            }
+        }
+    }
+    private static String genDiff(Map<String, Object> map1, Map<String, Object> map2) {
         String result = "";
-        for (Map.Entry<String, String> item1 : map1.entrySet()) {
+        fixNull(map1);
+        fixNull(map2);
+        for (Map.Entry<String, Object> item1 : map1.entrySet()) {
             if (!map2.containsKey(item1.getKey())) {
                 result += "  - " + item1.getKey() + ": " + item1.getValue() + "\n";
             }
@@ -22,7 +32,7 @@ public class Differ {
                 result += "    " + item1.getKey() + ": " + item1.getValue() + "\n";
             }
         }
-        for (Map.Entry<String, String> item2 : map2.entrySet()) {
+        for (Map.Entry<String, Object> item2 : map2.entrySet()) {
             if (!map1.containsKey(item2.getKey())) {
                 result += "  + " + item2.getKey() + ": " + item2.getValue() + "\n";
             }
@@ -31,13 +41,13 @@ public class Differ {
         resultList.addAll(Arrays.asList(result.split("\n")));
 
         resultList = resultList.stream()
-                .sorted(Comparator.comparing(x -> x.charAt(4)))
+                .sorted(Comparator.comparing(x -> x.substring(4, x.indexOf(":"))))
                 .toList();
         result = String.join("\n", resultList);
         return "{\n" + result + "\n}";
     }
     public static String generate(String filepath1, String filepath2) throws Exception {
-        List<Map<String, String>> maps = new ArrayList<>();
+        List<Map<String, Object>> maps = new ArrayList<>();
         String extension = filepath1.split("/")[filepath1.split("/").length - 1].split("\\.")[1];
         if (extension.equals("json")) {
             maps = Parser.parsJson(filepath1, filepath2);
