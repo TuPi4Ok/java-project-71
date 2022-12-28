@@ -27,7 +27,7 @@ jobs:
         make test
     - name: publish code coverage
       uses: |
-        cd app/
+        ls -a
         paambaati/codeclimate-action@v3.2.0
       env: 
         CC_TEST_REPORTER_ID: ${{secrets.TESTCOVERAGE}}
