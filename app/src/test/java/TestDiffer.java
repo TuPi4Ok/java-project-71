@@ -30,8 +30,8 @@ public class TestDiffer {
                 + "  + verbose: true\n"
                 + "}";
         assertThat(Differ
-                .generate(System.getProperty("user.dir") + "/src/test/resources/file1.yaml",
-                        System.getProperty("user.dir") + "/src/test/resources/file2.yaml"))
+                .generate(System.getProperty("user.dir") + "/src/test/resources/file1.yml",
+                        System.getProperty("user.dir") + "/src/test/resources/file2.yml"))
                 .isEqualTo(expected);
     }
 }

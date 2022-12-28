@@ -42,7 +42,7 @@ public class Differ {
         if (extension.equals("json")) {
             maps = Parser.parsJson(filepath1, filepath2);
         }
-        if (extension.equals("yaml")) {
+        if (extension.equals("yml")) {
             maps = Parser.parsYaml(filepath1, filepath2);
         }
 
