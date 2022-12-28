@@ -19,4 +19,19 @@ public class TestDiffer {
                         System.getProperty("user.dir") + "/src/test/resources/file2.json"))
                 .isEqualTo(expected);
     }
+    @Test
+    public void testFlatYaml() throws Exception {
+        String expected = "{\n"
+                + "  - follow: false\n"
+                + "    host: hexlet.io\n"
+                + "  - proxy: 123.234.53.22\n"
+                + "  - timeout: 50\n"
+                + "  + timeout: 20\n"
+                + "  + verbose: true\n"
+                + "}";
+        assertThat(Differ
+                .generate(System.getProperty("user.dir") + "/src/test/resources/file1.yaml",
+                        System.getProperty("user.dir") + "/src/test/resources/file2.yaml"))
+                .isEqualTo(expected);
+    }
 }

@@ -1,10 +1,5 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -42,15 +37,15 @@ public class Differ {
         return "{\n" + result + "\n}";
     }
     public static String generate(String filepath1, String filepath2) throws Exception {
-        Path file1 = Path.of(filepath1);
-        Path file2 = Path.of(filepath2);
+        List<Map<String, String>> maps = new ArrayList<>();
+        String extension = filepath1.split("/")[filepath1.split("/").length - 1].split("\\.")[1];
+        if (extension.equals("json")) {
+            maps = Parser.parsJson(filepath1, filepath2);
+        }
+        if (extension.equals("yaml")) {
+            maps = Parser.parsYaml(filepath1, filepath2);
+        }
 
-        String json1 = Files.readString(file1);
-        String json2 = Files.readString(file2);
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        Map<String, String> jsonMap1 = objectMapper.readValue(json1, new TypeReference<Map<String, String>>() { });
-        Map<String, String> jsonMap2 = objectMapper.readValue(json2, new TypeReference<Map<String, String>>() { });
-        return genDiff(jsonMap1, jsonMap2);
+        return genDiff(maps.get(0), maps.get(1));
     }
 }
