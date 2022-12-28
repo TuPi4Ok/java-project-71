@@ -26,9 +26,7 @@ jobs:
         cd app/
         make test
     - name: publish code coverage
-      uses: |
-        ls -a
-        paambaati/codeclimate-action@v3.2.0
+      uses: app/paambaati/codeclimate-action@v3.2.0
       env: 
         CC_TEST_REPORTER_ID: ${{secrets.TESTCOVERAGE}}
         JACOCO_SOURCE_PATH: src/main/java
