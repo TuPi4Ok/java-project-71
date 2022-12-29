@@ -7,3 +7,5 @@
 <a href="https://asciinema.org/a/1cAgL6krTcNki7IBxPk2n7Mbc" target="_blank"><img src="https://asciinema.org/a/1cAgL6krTcNki7IBxPk2n7Mbc.svg" /></a>
 ### Work example with YML
 <a href="https://asciinema.org/a/HOmFvuAt7IQemHYfzfavPQvrV" target="_blank"><img src="https://asciinema.org/a/HOmFvuAt7IQemHYfzfavPQvrV.svg" /></a>
+### Default format - stylish
+<a href="https://asciinema.org/a/hevH4SUFwY5VmpxG8pdPHQFqd" target="_blank"><img src="https://asciinema.org/a/hevH4SUFwY5VmpxG8pdPHQFqd.svg" /></a>
