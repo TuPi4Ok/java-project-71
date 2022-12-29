@@ -25,7 +25,7 @@ public class App implements Runnable {
                 filepath2 = dir + "/" + filepath2;
             }
 
-            System.out.println(Differ.generate(filepath1, filepath2));
+            System.out.println(Differ.generate(filepath1, filepath2, format));
         } catch (Exception e) {
             throw new RuntimeException("Возникла ошибка!");
         }
