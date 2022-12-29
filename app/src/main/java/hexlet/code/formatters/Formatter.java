@@ -8,6 +8,9 @@ public class Formatter {
         if (format.equalsIgnoreCase("plain")) {
             return Plain.get(map1, map2, diff);
         }
+        if (format.equalsIgnoreCase("json")) {
+            return Json.get(diff);
+        }
         return Stylish.get(map1, map2, diff);
     }
 }

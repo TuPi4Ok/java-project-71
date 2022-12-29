@@ -87,4 +87,15 @@ public class TestDiffer {
                         System.getProperty("user.dir") + "/src/test/resources/file4.json", "plain"))
                 .isEqualTo(expected);
     }
+
+    @Test
+    public void testJsonFormat() throws Exception {
+        String s = "\"proxy\":\"deleted\",\"timeout\":\"changed\",\"verbose\":\"added\"}";
+        String expected = "{\"follow\":\"deleted\",\"host\":\"unchanged\","
+                + s;
+        assertThat(Differ
+                .generate(System.getProperty("user.dir") + "/src/test/resources/file1.json",
+                        System.getProperty("user.dir") + "/src/test/resources/file2.json", "json"))
+                .isEqualTo(expected);
+    }
 }
