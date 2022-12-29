@@ -9,3 +9,5 @@
 <a href="https://asciinema.org/a/HOmFvuAt7IQemHYfzfavPQvrV" target="_blank"><img src="https://asciinema.org/a/HOmFvuAt7IQemHYfzfavPQvrV.svg" /></a>
 ### Default format - stylish
 <a href="https://asciinema.org/a/hevH4SUFwY5VmpxG8pdPHQFqd" target="_blank"><img src="https://asciinema.org/a/hevH4SUFwY5VmpxG8pdPHQFqd.svg" /></a>
+### Default format - plain
+<a href="https://asciinema.org/a/CQyN9NHalIivKY2gxuD7Jnjdo" target="_blank"><img src="https://asciinema.org/a/CQyN9NHalIivKY2gxuD7Jnjdo.svg" /></a>
