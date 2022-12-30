@@ -1,3 +1,5 @@
+package hexlet.code;
+
 import hexlet.code.app.Differ;
 import org.junit.jupiter.api.Test;
 
