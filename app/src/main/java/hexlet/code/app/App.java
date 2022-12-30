@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.app;
 
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
@@ -9,7 +9,7 @@ import picocli.CommandLine.Option;
         version = "gendiff 2.28",
         mixinStandardHelpOptions = true
 )
-public class app implements Runnable {
+public class App implements Runnable {
     @Parameters(index = "0", description = "path to first file")
     private String filepath1;
     @Parameters(index = "1", description = "path to second file")
@@ -33,6 +33,6 @@ public class app implements Runnable {
     @Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
     String format = "stylish";
     public static void main(String[] args) {
-        new CommandLine(new app()).execute(args);
+        new CommandLine(new App()).execute(args);
     }
 }
