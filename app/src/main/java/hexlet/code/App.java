@@ -15,7 +15,7 @@ public class App implements Runnable {
     @Parameters(index = "1", description = "path to second file")
     private String filepath2;
     @Override
-    public void run() {
+    public final void run() {
         try {
             String dir = System.getProperty("user.dir");
             if (filepath1.charAt(0) != '/') {
