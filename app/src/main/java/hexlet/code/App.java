@@ -31,7 +31,7 @@ public class App implements Runnable {
         }
     }
     @Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
-    String format = "";
+    private String format = "";
     public static void main(String[] args) {
         new CommandLine(new App()).execute(args);
     }
