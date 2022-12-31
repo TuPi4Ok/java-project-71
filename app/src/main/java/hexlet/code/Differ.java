@@ -45,6 +45,7 @@ public class Differ {
         }
         return result;
     }
+
     public static String generate(String filepath1, String filepath2, String format) throws Exception {
         List<Map<String, Object>> maps = new ArrayList<>();
         String extension = filepath1.split("/")[filepath1.split("/").length - 1].split("\\.")[1];
@@ -56,5 +57,9 @@ public class Differ {
         }
 
         return Formatter.get(maps.get(0), maps.get(1), genDiff(maps.get(0), maps.get(1)), format);
+    }
+
+    public static String generate(String filepath1, String filepath2) throws Exception {
+        return generate(filepath1, filepath2, "stylish");
     }
 }
